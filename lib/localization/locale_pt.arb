@@ -1,0 +1,7 @@
+{
+  "@@locale" : "pt",
+  "appTitle" : "Greengrocer",
+
+  "emailInputLabel": "Email",
+  "passwordInputLabel": "Senha"
+}  
