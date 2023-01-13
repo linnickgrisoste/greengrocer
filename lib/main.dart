@@ -20,9 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       localizationsDelegates: Localization.localizationsDelegates,
       supportedLocales: Localization.supportedLocales,
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
+      theme: ThemeData(primarySwatch: Colors.green),
       home: const SignInView(),
     );
   }
