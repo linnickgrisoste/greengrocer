@@ -12,6 +12,7 @@ class SignInView extends StatelessWidget {
     final l10n = Localize.instance.l10n;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.green,
       body: Column(
         children: [
