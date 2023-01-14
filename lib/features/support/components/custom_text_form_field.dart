@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../support/style/app_colors.dart';
+import '../../../support/style/app_fonts.dart';
+
 class CustomTextFormField extends StatefulWidget {
   final IconData icon;
   final String label;
@@ -30,6 +33,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: TextFormField(
+        style: AppFonts.regular(16, AppColors.black),
         obscureText: obscureText,
         decoration: InputDecoration(
           prefixIcon: Icon(widget.icon),

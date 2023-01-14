@@ -1,5 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:greengrocer/support/style/app_colors.dart';
+import 'package:greengrocer/support/style/app_fonts.dart';
 
 import '../../localization/localize.dart';
 import '../support/components/custom_text_form_field.dart';
@@ -13,7 +15,7 @@ class SignInView extends StatelessWidget {
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.green,
+      backgroundColor: AppColors.limeGreen,
       body: Column(
         children: [
           Expanded(
@@ -21,23 +23,16 @@ class SignInView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 /// Nome do App
-                const Text.rich(
+                Text.rich(
                   TextSpan(
-                    style: TextStyle(fontSize: 40),
                     children: [
                       TextSpan(
                         text: 'Green',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: AppFonts.regular(40, AppColors.white),
                       ),
                       TextSpan(
                         text: 'grocer',
-                        style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: AppFonts.regular(40, AppColors.darkRed),
                       ),
                     ],
                   ),
@@ -47,7 +42,7 @@ class SignInView extends StatelessWidget {
                 SizedBox(
                   height: 32,
                   child: DefaultTextStyle(
-                    style: const TextStyle(fontSize: 24),
+                    style: AppFonts.regular(24, AppColors.white),
                     child: AnimatedTextKit(
                       pause: Duration.zero,
                       repeatForever: true,
@@ -102,9 +97,9 @@ class SignInView extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {},
-                    child: const Text(
+                    child: Text(
                       'Entrar',
-                      style: TextStyle(fontSize: 18),
+                      style: AppFonts.bold(18, AppColors.white),
                     ),
                   ),
                 ),
@@ -114,9 +109,9 @@ class SignInView extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () {},
-                    child: const Text(
+                    child: Text(
                       'Esqueceu sua senha?',
-                      style: TextStyle(color: Colors.green),
+                      style: AppFonts.bold(14, AppColors.limeGreen),
                     ),
                   ),
                 ),
@@ -132,9 +127,12 @@ class SignInView extends StatelessWidget {
                           thickness: 2,
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 12),
-                        child: Text('Ou'),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                        child: Text(
+                          'Ou',
+                          style: AppFonts.regular(14, AppColors.black),
+                        ),
                       ),
                       Expanded(
                         child: Divider(
@@ -159,9 +157,9 @@ class SignInView extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {},
-                    child: const Text(
+                    child: Text(
                       'Criar conta',
-                      style: TextStyle(fontSize: 16),
+                      style: AppFonts.bold(18, AppColors.limeGreen),
                     ),
                   ),
                 ),
