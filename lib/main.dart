@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/localization.dart';
 
 import 'features/auth/sign_in_view.dart';
 import 'localization/localize.dart';
+import 'support/style/app_colors.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +21,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       localizationsDelegates: Localization.localizationsDelegates,
       supportedLocales: Localization.supportedLocales,
-      theme: ThemeData(primarySwatch: Colors.green),
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        scaffoldBackgroundColor: AppColors.white.withAlpha(190),
+      ),
       home: const SignInView(),
     );
   }

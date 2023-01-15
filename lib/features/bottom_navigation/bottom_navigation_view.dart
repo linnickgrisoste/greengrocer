@@ -1,19 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:greengrocer/features/auth/home/home_view.dart';
 
 import '../../support/style/app_colors.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class BottomNavigationVIew extends StatefulWidget {
+  const BottomNavigationVIew({super.key});
+
+  @override
+  State<BottomNavigationVIew> createState() => _BottomNavigationVIewState();
+}
+
+class _BottomNavigationVIewState extends State<BottomNavigationVIew> {
+  int currentIndex = 0;
+  final pageController = PageController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(color: AppColors.white),
+      body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
+        controller: pageController,
+        children: [
+          const HomeView(),
+          Container(color: AppColors.black),
+          Container(color: AppColors.darkRed),
+          Container(color: AppColors.limeGreen),
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
         backgroundColor: AppColors.limeGreen,
         selectedItemColor: AppColors.white,
         unselectedItemColor: AppColors.white.withAlpha(100),
         type: BottomNavigationBarType.fixed,
+        onTap: (index) {
+          setState(() {
+            currentIndex = index;
+            pageController.jumpToPage(index);
+          });
+        },
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
