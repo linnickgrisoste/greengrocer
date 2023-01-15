@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:greengrocer/features/auth/sign_up/sign_up_view.dart';
+import 'package:greengrocer/features/home/home_view.dart';
 import 'package:greengrocer/support/style/app_colors.dart';
 import 'package:greengrocer/support/style/app_fonts.dart';
 
@@ -97,7 +98,15 @@ class SignInView extends StatelessWidget {
                         borderRadius: BorderRadius.circular(18),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const HomeView();
+                          },
+                        ),
+                      );
+                    },
                     child: Text(
                       'Entrar',
                       style: AppFonts.bold(18, AppColors.white),
