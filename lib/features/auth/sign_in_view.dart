@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:greengrocer/features/auth/sign_up/sign_up_view.dart';
 import 'package:greengrocer/support/style/app_colors.dart';
 import 'package:greengrocer/support/style/app_fonts.dart';
 
@@ -156,7 +157,13 @@ class SignInView extends StatelessWidget {
                         color: Colors.green,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) {
+                          return const SignUpView();
+                        }),
+                      );
+                    },
                     child: Text(
                       'Criar conta',
                       style: AppFonts.bold(18, AppColors.limeGreen),
