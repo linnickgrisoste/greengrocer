@@ -160,7 +160,7 @@ class SignInView extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) {
-                          return const SignUpView();
+                          return SignUpView();
                         }),
                       );
                     },

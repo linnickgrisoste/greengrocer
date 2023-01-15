@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../../support/style/app_colors.dart';
 import '../../../support/style/app_fonts.dart';
@@ -7,12 +8,14 @@ class CustomTextFormField extends StatefulWidget {
   final IconData icon;
   final String label;
   final bool isSecret;
+  final List<TextInputFormatter>? inputFormatters;
 
   const CustomTextFormField({
     super.key,
     required this.icon,
     required this.label,
     this.isSecret = false,
+    this.inputFormatters,
   });
 
   @override
@@ -33,6 +36,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: TextFormField(
+        inputFormatters: widget.inputFormatters,
         style: AppFonts.regular(16, AppColors.black),
         obscureText: obscureText,
         decoration: InputDecoration(
