@@ -5,8 +5,8 @@ import 'package:greengrocer/features/bottom_navigation/bottom_navigation_view.da
 import 'package:greengrocer/support/style/app_colors.dart';
 import 'package:greengrocer/support/style/app_fonts.dart';
 
-import '../../localization/localize.dart';
-import '../support/components/custom_text_form_field.dart';
+import '../../../localization/localize.dart';
+import '../../../support/components/custom_text_form_field.dart';
 
 class SignInView extends StatelessWidget {
   const SignInView({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/localization.dart';
 
-import 'features/auth/sign_in_view.dart';
+import 'features/auth/sign_in/sign_in_view.dart';
 import 'localization/localize.dart';
 import 'support/style/app_colors.dart';
 

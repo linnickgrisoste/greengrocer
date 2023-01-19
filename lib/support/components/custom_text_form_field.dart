@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../../support/style/app_colors.dart';
-import '../../../support/style/app_fonts.dart';
+import '../style/app_colors.dart';
+import '../style/app_fonts.dart';
 
 class CustomTextFormField extends StatefulWidget {
   final IconData icon;

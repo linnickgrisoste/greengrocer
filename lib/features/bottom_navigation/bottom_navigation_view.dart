@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:greengrocer/features/auth/home/home_view.dart';
+import 'package:greengrocer/features/home/home_view.dart';
 
 import '../../support/style/app_colors.dart';
 
@@ -21,7 +21,7 @@ class _BottomNavigationVIewState extends State<BottomNavigationVIew> {
         physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
         children: [
-          const HomeView(),
+          HomeView(),
           Container(color: AppColors.black),
           Container(color: AppColors.darkRed),
           Container(color: AppColors.limeGreen),
