@@ -4,17 +4,17 @@ import 'package:flutter/material.dart';
 import '../../support/components/category_tile.dart';
 import '../../support/style/app_colors.dart';
 import '../../support/style/app_fonts.dart';
+import '../models/item_data.dart';
 
-class HomeView extends StatelessWidget {
-  HomeView({super.key});
+class HomeView extends StatefulWidget {
+  const HomeView({super.key});
 
-  List<String> categories = [
-    'Frutas',
-    'Grãos',
-    'Verduras',
-    'Temperos',
-    'Cereais',
-  ];
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  String selectedCategory = 'Frutas';
 
   @override
   Widget build(BuildContext context) {
@@ -90,8 +90,13 @@ class HomeView extends StatelessWidget {
               separatorBuilder: (_, index) => const SizedBox(width: 10),
               itemBuilder: (_, index) {
                 return CategoryTile(
+                  onPressed: () {
+                    setState(() {
+                      selectedCategory = categories[index];
+                    });
+                  },
                   category: categories[index],
-                  isSelected: false,
+                  isSelected: categories[index] == selectedCategory,
                 );
               },
             ),
