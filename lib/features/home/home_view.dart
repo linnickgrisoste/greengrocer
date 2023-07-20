@@ -1,5 +1,5 @@
-import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:greengrocer/support/components/item_tile.dart';
 
 import '../../support/components/category_tile.dart';
 import '../../support/style/app_colors.dart';
@@ -44,8 +44,8 @@ class _HomeViewState extends State<HomeView> {
             child: GestureDetector(
               onTap: () {},
               child: Badge(
-                badgeColor: AppColors.darkRed,
-                badgeContent: Text(
+                backgroundColor: AppColors.darkRed,
+                label: Text(
                   '2',
                   style: AppFonts.bold(12, AppColors.white),
                 ),
@@ -101,6 +101,25 @@ class _HomeViewState extends State<HomeView> {
               },
             ),
           ),
+          //* Grid
+          Expanded(
+            child: GridView.builder(
+              padding: const EdgeInsets.only(left: 16, top: 0, right: 16, bottom: 16),
+              physics: const BouncingScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 12,
+                crossAxisSpacing: 12,
+                childAspectRatio: 9 / 12,
+              ),
+              itemCount: items.length,
+              itemBuilder: (_, index) {
+                return ItemTile(
+                  item: items[index],
+                );
+              },
+            ),
+          )
         ],
       ),
     );
