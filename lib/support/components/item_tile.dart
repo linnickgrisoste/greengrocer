@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:greengrocer/features/models/item_model.dart';
+import 'package:greengrocer/support/services/utils_services.dart';
 
 import '../style/app_colors.dart';
 
 class ItemTile extends StatelessWidget {
   final ItemModel item;
 
-  const ItemTile({
+  ItemTile({
     super.key,
     required this.item,
   });
+
+  final UtilsServices utilsServices = UtilsServices();
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +38,7 @@ class ItemTile extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  item.price.toString(),
+                  utilsServices.priceToCurrency(item.price),
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
